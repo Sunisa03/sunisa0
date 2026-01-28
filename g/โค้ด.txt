@@ -1,0 +1,20 @@
+ยอดขายรวม
+SELECT SUM(`p_amount`) AS total FROM `popsupermarket`;
+
+Canada ขายได้
+SELECT SUM(`p_amount`) AS total FROM `popsupermarket` WHERE `p_country` = 'Canada';
+
+Sweden ขายได้
+SELECT SUM(`p_amount`) AS total FROM `popsupermarket` WHERE `p_country` = 'Sweden';
+
+Sweden ขายผักได้
+SELECT SUM(`p_amount`) AS total FROM `popsupermarket` WHERE `p_country` = 'Sweden' AND`p_category` = 'Vegetables';
+
+เอาแค่ประเทศ
+SELECT `p_country` FROM `popsupermarket` GROUP BY`p_country`;
+
+ยอดรวมแต่ละประเทศ
+SELECT `p_country`,SUM(`p_amount`) AS total FROM `popsupermarket` GROUP BY`p_country`;
+
+เรียงยอดขายจากมากไปน้อย
+SELECT `p_country`,SUM(`p_amount`) AS total FROM `popsupermarket` GROUP BY`p_country`ORDER BY total DESC;
