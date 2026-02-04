@@ -12,10 +12,8 @@
 <h1>สุนิสา จันทัน (เนย)</h1>
 
 <?php
-    $_SESSION['name'] = "สุนิสา จันทัน";
-    $_SESSION['nickname'] = "เนย";
-    $_SESSION['p1'] = "โซฟา";
-    $_SESSION['p2'] = "ห่วงยาง"; 
+    unset($_SESSION['name']);
+    unset($_SESSION['p1']);
 ?>
 </body>
 </html>
