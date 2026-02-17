@@ -13,6 +13,7 @@
     <tr>
         <th>รหัสภาค</th>
         <th>ชื่อภาค</th>
+        <th>ลบ</th>
     </tr>
 <?php
 include_once("connectdb.php");
@@ -23,6 +24,7 @@ while($data = mysqli_fetch_array($rs)){
     <tr>
         <td><?php echo $data['r_ID'];?></td>
         <td><?php echo $data['r_name'];?></td>
+        <td width="80" align="center"><
     </tr>
 <?php } ?>
 </table>
