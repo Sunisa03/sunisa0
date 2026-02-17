@@ -21,7 +21,7 @@ $sql3 = "SELECT * FROM regions";
 $rs3 = mysqli_query($conn, $sql3);
  while ($data3 = mysqli_fetch_array($rs3)){
 ?>   
-    	<option value="<?php echo $data3['r_id'] ; ?>"><?php echo $data3['r_name'] ;?></option>
+    	<option value="<?php echo $data3['p_id'] ; ?>"><?php echo $data3['p_name'] ;?></option>
 <?php } ?>
     </select>
     <br>
