@@ -15,16 +15,17 @@
 
     ภาค
     <select name="rid">
-<?php
+ <?php
 include_once("connectdb.php");
-$sql = "SELECT * FROM `provinces`";
-$rs3 = mysqli_query($conn, $sql);
-while($data = mysqli_fetch_array($rs3)){
-?>
-        <option value="<?php echo $data3['r_id'] ; ?>"><?php echo $data3['r_name'] ;?></option>
+$sql = "SELECT * FROM regions";
+$rs = mysqli_query($conn, $sql);
+ while ($data = mysqli_fetch_array($rs)){
+?> 
+        <option value="<?php echo $data['r_id'] ; ?>"><?php echo $data['r_name'] ;?></option>
 <?php } ?>
     </select>
-    <button type="submit" name="Submit">บันทึก</button>
+
+    <button type="submit" name="Submit">บันทึก</button>	
 </form><br><br>
 
 <?php
@@ -34,10 +35,10 @@ if(isset($_POST['Submit'])){
     $ext = pathinfo($_FILES['pimage']['name'], PATHINFO_EXTENSION);
     $rid = $_POST['rid'];
 
-	$sql2 = "INSERT INTO `provinces` VALUES (NULL, '{$pname}','{$ext}','{$rname}')";
+	$sql2 = "INSERT INTO provinces (p_id, p_name, p_ext, r_id) VALUES (NULL, '{$pname}','{$ext}','{$rid}')";
 	mysqli_query($conn, $sql2) or die ("เพิ่มข้อมูลไม่ได้");
     $pid = mysqli_insert_id($conn);
-    //copy($_FILES['pimage']['tmp_name'],"images/".$pid.".".$ext);
+    copy($_FILES['pimage']['tmp_name'],"images/".$pid.".".$ext);
 
 }
 ?>
@@ -49,16 +50,17 @@ if(isset($_POST['Submit'])){
         <th>รูป</th>
         <th>ลบ</th>
     </tr>
-<?php
+    <?php
 include_once("connectdb.php");
-$sql = "SELECT * FROM `provinces);
-while($data = mysqli_fetch_array($rs)){
-?>
+$sql = "SELECT * FROM provinces";
+$rs = mysqli_query($conn, $sql);
+ while ($data = mysqli_fetch_array($rs)){
+?>   
     <tr>
-        <td><?php echo $data['p_id'];?></td>
-        <td><?php echo $data['p_name'];?></td>
-        <td><img src="image/<?php echo $data['p_id'];?>.<?php echo $data['p-ext'];?>"width="20"></td>
-        <td width="80" align="center"><a href="delete_regions.php?id=<?php echo $data['i_id'] ; ?>" onClick="return confirm('ยืนยันการลบ?')"><img src="image/1.jpg" width="20"></td>
+    	<td><?php echo $data['p_id'] ; ?></td>
+        <td><?php echo $data['p_name'] ;?></td>
+        <td width="80" align="center"><img src="img/<?php echo $data['p_id'] ; ?>.<?php echo $data['p_ext'] ; ?>" width="50"></a></td>
+        <td width="80" align="center"><a href="delete_provinces.php?id=<?php echo $data['r_id']; ?>" onClick="return confirm('d1');"><img src="img/A.jpg" width="50"></a></td>
     </tr>
 <?php } ?>
 </table>
