@@ -55,7 +55,8 @@ if(isset($_POST['Submit'])){
     </tr>
 <?php
 include_once("connectdb.php");
-$sql = "SELECT * FROM provincesAS p INNER JOIN regions AS r ON p.r_id=r.r_id";
+$sql = "SELECT * FROM `provinces`AS p 
+INNER JOIN `regions` AS r ON p.r_id=r.r_id";
 $rs = mysqli_query($conn, $sql);
  while ($data = mysqli_fetch_array($rs)){
 ?>   
