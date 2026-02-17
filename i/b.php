@@ -15,13 +15,13 @@
 
     ภาค
     <select name="rid">
-    <?php
+<?php
 include_once("connectdb.php");
 $sql = "SELECT * FROM `provinces`";
-$rs = mysqli_query($conn, $sql);
-while($data = mysqli_fetch_array($rs)){
+$rs3 = mysqli_query($conn, $sql);
+while($data = mysqli_fetch_array($rs3)){
 ?>
-        <option value="xxx">xxx</option>
+        <option value="<?php echo $data3['r_id'] ; ?>"><?php echo $data3['r_name'] ;?></option>
 <?php } ?>
     </select>
     <button type="submit" name="Submit">บันทึก</button>
@@ -37,7 +37,8 @@ if(isset($_POST['Submit'])){
 	$sql2 = "INSERT INTO `provinces` VALUES (NULL, '{$pname}','{$ext}','{$rname}')";
 	mysqli_query($conn, $sql2) or die ("เพิ่มข้อมูลไม่ได้");
     $pid = mysqli_insert_id($conn);
-    copy($_FILES['pimage']['tmp_name'],"images/".$pid.".".$ext);
+    //copy($_FILES['pimage']['tmp_name'],"images/".$pid.".".$ext);
+
 }
 ?>
 
