@@ -61,7 +61,7 @@ $rs = mysqli_query($conn, $sql);
         <td><?php echo $data['p_name'] ;?></td>
         <td><?php echo $data['r_name'] ;?></td>
         <td><img src="images/<?php echo $data['p_id'];?>.<?php echo $data['p-ext'];?>"width="100"></td>
-        <td width="80" align="center"><a href="delete_provinces.php?id=<?php echo $data['r_id']; ?>" onClick="return confirm('d1');"><img src="images/delete.jpg" width="50"></a></td>
+        <td width="80" align="center"><a href="delete_provinces.php?id=<?php echo $data['r_id']; ?>&ext=<?php echo $data['p_ext'];?>" onClick="return confirm('ยืนยันการลบ?');"><img src="images/delete.jpg" width="50"></a></td>
     </tr>
 <?php } ?>
 </table>
