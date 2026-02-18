@@ -21,9 +21,9 @@ if(isset($_POST['Submit'])){
 <meta charset="utf-8">
 <title>sunisa</title>
 </head>
-<body>
 
-<h1> งาน i -- 66010914020 สุนิสา จันทัน (เนย) </h1>
+<body>
+<h1>งาน i -- สุนิสา จันทัน (เนย)</h1>
 
 <form method="post" action="" enctype="multipart/form-data" >
     ชื่อจังหวัด <input type="text" name="pname" autofocus required><br>
