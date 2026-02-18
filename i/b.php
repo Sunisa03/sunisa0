@@ -1,16 +1,20 @@
 <?php
 include_once("connectdb.php");
 
+// ส่วนบันทึกข้อมูล (อยู่บนสุดเพื่อให้บันทึกเสร็จแล้วแสดงผลทันที)
 if(isset($_POST['Submit'])){
     $pname = $_POST['pname'];
     $ext = pathinfo($_FILES['pimage']['name'], PATHINFO_EXTENSION);
     $rid = $_POST['rid'];
     
+    // บันทึกลงฐานข้อมูล
     $sql_insert = "INSERT INTO provinces (p_id, p_name, p_ext, r_id) VALUES (NULL, '{$pname}', '{$ext}', '{$rid}')";
     mysqli_query($conn, $sql_insert) or die ("เพิ่มข้อมูลไม่ได้: " . mysqli_error($conn));
     
+    // ดึง ID ล่าสุดเพื่อมาตั้งชื่อรูป
     $pid = mysqli_insert_id($conn);
     
+    // อัพโหลดรูปภาพไปที่โฟลเดอร์ images
     move_uploaded_file($_FILES['pimage']['tmp_name'], "images/".$pid.".".$ext);
 }
 ?>
@@ -21,9 +25,9 @@ if(isset($_POST['Submit'])){
 <meta charset="utf-8">
 <title>sunisa</title>
 </head>
-
 <body>
-<h1>งาน i -- สุนิสา จันทัน (เนย)</h1>
+
+<h1> งานi-- สุนิสา จันทัน (เนย) </h1>
 
 <form method="post" action="" enctype="multipart/form-data" >
     ชื่อจังหวัด <input type="text" name="pname" autofocus required><br>
@@ -54,6 +58,7 @@ if(isset($_POST['Submit'])){
         <th>ลบ</th>
     </tr>
 <?php
+// แก้ไข SQL: เว้นวรรคตรง provinces AS p
 $sql_show = "SELECT * FROM provinces AS p INNER JOIN regions AS r ON p.r_id = r.r_id ORDER BY p.p_id ASC";
 $rs_show = mysqli_query($conn, $sql_show);
 
