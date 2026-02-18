@@ -19,7 +19,7 @@
     .modal {
         display: none; 
         position: fixed; z-index: 1; left: 0; top: 0;
-        width: 50; height: 50; background-color: rgba(0,0,0,0.9);
+        width: 30; height: 50; background-color: rgba(0,0,0,0.9);
     }
     .modal-content {
         margin: auto; display: block; width: 80%; max-width: 700px;
