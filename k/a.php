@@ -19,7 +19,7 @@
     .modal {
         display: none; 
         position: fixed; z-index: 1; left: 0; top: 0;
-        width: 100%; height: 100%; background-color: rgba(0,0,0,0.9);
+        width: 50; height: 50; background-color: rgba(0,0,0,0.9);
     }
     .modal-content {
         margin: auto; display: block; width: 80%; max-width: 700px;
@@ -37,8 +37,8 @@
 
     <h1>งาน k 66010914020 สุนิสา จันทัน (เนย)</h1>
 
-    <button class="btn-green" onclick="showImage('img/2.jpeg')">คลิก</button>
-    <button class="btn-orange" onclick="showImage('img/1.jpg')">คลิก</button>
+    <button class="btn-green" onclick="showImage('img/2.jpeg')">รูปตัวเอง</button>
+    <button class="btn-orange" onclick="showImage('img/1.jpg')">รูปอาจารย์</button>
 
     <div id="myModal" class="modal">
         <span class="close" onclick="closeImage()">&times; ปิดรูปภาพ</span>
