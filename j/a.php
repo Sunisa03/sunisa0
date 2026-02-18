@@ -8,6 +8,6 @@
 <body>
 
 <h1>งาน j -- สุนิสา จันทัน (เนย)</h1>
-<img src="1.jpeg" height="100">
+<img src="1.jpeg" height="300">
 </body>
 </html>
