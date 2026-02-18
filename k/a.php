@@ -37,8 +37,8 @@
 
     <h1>งาน k 66010914020 สุนิสา จันทัน (เนย)</h1>
 
-    <button class="btn-green" onclick="showImage('images/2.jpeg')">คลิก</button>
-    <button class="btn-orange" onclick="showImage('images/1.jpg')">คลิก</button>
+    <button class="btn-green" onclick="showImage('img/2.jpeg')">คลิก</button>
+    <button class="btn-orange" onclick="showImage('img/1.jpg')">คลิก</button>
 
     <div id="myModal" class="modal">
         <span class="close" onclick="closeImage()">&times; ปิดรูปภาพ</span>
