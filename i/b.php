@@ -32,7 +32,7 @@ if(isset($_POST['Submit'])){
     ภาค
     <select name="rid">
     <?php
-    $sql_region = "SELECT * FROM regions";
+    $sql_region = "SELECT * FROM Regions";
     $rs_region = mysqli_query($conn, $sql_region);
     while ($data_region = mysqli_fetch_array($rs_region)){
     ?>   
@@ -54,7 +54,7 @@ if(isset($_POST['Submit'])){
         <th>ลบ</th>
     </tr>
 <?php
-$sql_show = "SELECT * FROM provinces AS p INNER JOIN regions AS r ON p.r_id = r.r_id ORDER BY p.p_id ASC";
+$sql_show = "SELECT * FROM provinces AS p INNER JOIN Regions AS r ON p.r_id = r.r_id ORDER BY p.p_id ASC";
 $rs_show = mysqli_query($conn, $sql_show);
 
 while ($data = mysqli_fetch_array($rs_show)){
