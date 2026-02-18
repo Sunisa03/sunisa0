@@ -18,7 +18,7 @@
 if(isset($_POST['Submit'])){
 	include_once("connectdb.php");
 	$rname = $_POST['rname'];
-	$sql2 = "INSERT INTO regions (i_id, r_name) VALUES (NULL, '{$rname}')";
+	$sql2 = "INSERT INTO regions (r_id, r_name) VALUES (NULL, '{$rname}')";
 	mysqli_query($conn, $sql2) or die ("เพิ่มข้อมูลไม่ได้");
 }
 ?>
@@ -31,14 +31,14 @@ if(isset($_POST['Submit'])){
     </tr>
 <?php
 include_once("connectdb.php");
-$sql = "SELECT * FROM `regions`";
+$sql = "SELECT * FROM `Regions`";
 $rs = mysqli_query($conn, $sql);
 while($data = mysqli_fetch_array($rs)){
 ?>
     <tr>
-        <td><?php echo $data['i_id'];?></td>
+        <td><?php echo $data['r_id'];?></td>
         <td><?php echo $data['r_name'];?></td>
-        <td width="80" align="center"><a href="delete_regions.php?id=<?php echo $data['i_id'] ; ?>" onClick="return confirm('ยืนยันการลบ?')"><img src="images/delete.jpg" width="20"></td>
+        <td width="80" align="center"><a href="delete_regions.php?id=<?php echo $data['r_id'] ; ?>" onClick="return confirm('ยืนยันการลบ?')"><img src="images/delete.jpg" width="20"></td>
     </tr>
 <?php } ?>
 </table>

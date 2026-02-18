@@ -36,11 +36,11 @@ if(isset($_POST['Submit'])){
     ภาค
     <select name="rid">
     <?php
-    $sql_region = "SELECT * FROM regions";
+    $sql_region = "SELECT * FROM Regions";
     $rs_region = mysqli_query($conn, $sql_region);
     while ($data_region = mysqli_fetch_array($rs_region)){
     ?>   
-        <option value="<?php echo $data_region['i_id'] ; ?>"><?php echo $data_region['r_name'] ;?></option>
+        <option value="<?php echo $data_region['r_id'] ; ?>"><?php echo $data_region['r_name'] ;?></option>
     <?php } ?>
     </select>
     <br><br>
